@@ -25,7 +25,7 @@ app.get(commands[1], (req, res) => {
 
 app.get(commands[2], (req, res) => {
     // res.sendFile(__dirname+'/views/index.ejs');
-    res.render('index.ejs');
+    res.send('hi');
 });
 
 app.get(commands[3], (req, res) => {
@@ -37,7 +37,13 @@ app.get(commands[4], (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.send('all commands is:'+commands)
+    res.render('index.ejs');
+})
+app.get('/calculator', (req, res) => {
+    res.render('pages/calculator.ejs')
+})
+app.get('/youtube', (req, res) => {
+    res.render('pages/youtube.ejs')
 })
 app.listen(port, () => {
     console.log('http://'+'localhost:'+port+'/');
